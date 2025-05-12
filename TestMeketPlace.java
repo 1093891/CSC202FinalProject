@@ -3,7 +3,7 @@ package marketplace;
 import java.time.LocalDate;
 //import java.time.Month;
 import java.util.*;
-public class TestProduct {
+public class TestMeketPlace {
     public static void main(String[] args) {
         //Product test
 //        try {
