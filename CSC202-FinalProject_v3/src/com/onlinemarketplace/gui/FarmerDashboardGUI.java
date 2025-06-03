@@ -35,7 +35,7 @@ public class FarmerDashboardGUI {
     private final DeliverySystem deliverySystem;
     private final Farmer currentFarmer; // The logged-in farmer
     private final LogoutCallback logoutAction; // Changed to custom interface
-    private VBox view;
+    private ScrollPane view;
 
     // Product Management Form fields
     private TextField productIdField;
@@ -72,7 +72,8 @@ public class FarmerDashboardGUI {
      * Initializes the GUI components and layout for the farmer dashboard.
      */
     private void initializeGUI() { // Changed to void, was accidentally 'private void void initializeGUI()'
-        view = new VBox(20); // Increased spacing
+        view = new ScrollPane(); // Increased spacing
+        view.setFitToWidth(true);
         view.setPadding(new Insets(20));
         view.setStyle("-fx-background-color: #e0ffe0;"); // Light green background
         VBox.setVgrow(view, Priority.ALWAYS); // Allow the main VBox to grow
@@ -239,8 +240,8 @@ public class FarmerDashboardGUI {
         orderContent.getChildren().addAll(farmerOrdersTable, orderMessageLabel);
         customerOrdersPane.setContent(orderContent);
 
+        view.setContent(new VBox(10, headerBox, productManagementPane, customerOrdersPane));
 
-        view.getChildren().addAll(headerBox, productManagementPane, customerOrdersPane);
         // Set VGrow for the TitledPanes within the main VBox
         VBox.setVgrow(productManagementPane, Priority.ALWAYS);
         VBox.setVgrow(customerOrdersPane, Priority.ALWAYS);
@@ -385,7 +386,7 @@ public class FarmerDashboardGUI {
      *
      * @return The VBox view.
      */
-    public VBox getView() {
+    public ScrollPane getView() {
         return view;
     }
 }
