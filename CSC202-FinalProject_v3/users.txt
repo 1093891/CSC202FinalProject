@@ -1,0 +1,3 @@
+Customer###C001###Alice Smith###alice@example.com###123###456 Oak Ave, Cityville
+Farmer###F001###Green Acres Farm###greenacres@example.com###123###123 Farm Rd, Ruralville
+Customer###C3###Amir###amir@gmail.com###123###qwertwe
